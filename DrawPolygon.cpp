@@ -1,7 +1,3 @@
-//
-// Created by Quoc An on 11/29/2020.
-//
-
 #include "DrawPolygon.h"
 #include <GL/glut.h>
 

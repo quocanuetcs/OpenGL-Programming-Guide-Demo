@@ -62,10 +62,3 @@ void Icosa::display() {
     }
 
 }
-
-// config here
-//void init(int argc,char **argv);
-
-//void Icosa::init() {
-//    srand(time(0));
-//}

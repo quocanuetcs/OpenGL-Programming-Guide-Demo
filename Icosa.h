@@ -1,6 +1,3 @@
-//
-// Created by dqhungdl on 24/11/2020.
-//
 #ifndef OPENGL_ICOSA_H
 #define OPENGL_ICOSA_H
 
@@ -52,10 +49,6 @@ namespace Icosa {
     void drawtriangle(float *v1, float *v2, float *v3);
 
     void subdivide(float *v1, float *v2, float *v3, long depth);
-
-    //void init(int argc,char **argv);
-    //void init();
-
 
     void display();
 };

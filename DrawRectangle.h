@@ -1,10 +1,10 @@
-
 #ifndef OPENGL_DRAWRECTANGLE_H
 #define OPENGL_DRAWRECTANGLE_H
 
 
-namespace DrawRectangle{
+namespace DrawRectangle {
     void drawDefault();
+
     void drawAuto();
 };
 
