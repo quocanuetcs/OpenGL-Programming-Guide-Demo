@@ -3,19 +3,29 @@
 #include <bits/stdc++.h>
 #include "Icosa.h"
 #include "CleaningTheWindow.h"
+#include "DrawRectangle.h"
+#include "DrawPolygon.h"
+#include "Dotted.h"
+#include "Dash.h"
+#include "DrawLine.h"
 
 using namespace std;
 const int width = 500;
 const int height = 500;
-const int lineSpace = 15;
+const int lineSpace = 25;
 int curContent = 0;
 
-//BUOC 1: TANG N ROI THEM PHAN TU VAO MANG
-const int nContent = 4;
+const int nContent = 10;
 string content[nContent] = {"OpenGL Programming Guide",
-                            "2.1.1.1 Cleaning the window (yellow)",
-                            "2.1.1.1 Cleaning the window (red)",
-                            "2.3.2   Icosahedron"};
+                            "Cleaning the window (Magenta)",
+                            "Cleaning the window (Red)",
+                            "Draw Line",
+                            "Draw Rectangle",
+                            "Draw Rectangle With Auto Function",
+                            "Draw Dash",
+                            "Draw Dotted",
+                            "Draw Polygon",
+                            "Draw Icosahedron"};
 
 void drawText(const char *text, int length, int x, int y) {
     glMatrixMode(GL_PROJECTION);
@@ -29,7 +39,7 @@ void drawText(const char *text, int length, int x, int y) {
     glLoadIdentity();
     glRasterPos2i(x, y);
     for (int i = 0; i < length; i++) {
-        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, (int) text[i]);
+        glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int) text[i]);
     }
     glPopMatrix();
     glMatrixMode(GL_PROJECTION);
@@ -79,18 +89,42 @@ void display(void) {
             }
             break;
         case 1:
-            CleaningTheWindow::cleaning("yellow");
+            CleaningTheWindow::cleaningMagenta();
             drawText(content[1].data(), content[1].size(), 0, height - lineSpace);
             break;
         case 2:
-            CleaningTheWindow::cleaning("red");
+            CleaningTheWindow::cleaningRed();
             drawText(content[2].data(), content[2].size(), 0, height - lineSpace);
             break;
         case 3:
             drawText(content[3].data(), content[3].size(), 0, height - lineSpace);
+            DrawLine::draw();
+            break;
+        case 4:
+            drawText(content[4].data(), content[4].size(), 0, height - lineSpace);
+            DrawRectangle::drawDefault();
+            break;
+        case 5:
+            drawText(content[5].data(), content[5].size(), 0, height - lineSpace);
+            DrawRectangle::drawAuto();
+            break;
+        case 6:
+            drawText(content[6].data(), content[6].size(), 0, height - lineSpace);
+            Dash::draw();
+            break;
+        case 7:
+            drawText(content[7].data(), content[6].size(), 0, height - lineSpace);
+            Dotted::draw();
+            break;
+        case 8:
+            drawText(content[8].data(), content[8].size(), 0, height - lineSpace);
+            DrawPolygon::draw();
+            break;
+        case 9:
+            drawText(content[9].data(), content[9].size(), 0, height - lineSpace);
             Icosa::display();
             break;
-            //BUOC 2: Them thu vien va code vao day
+
     }
     glFlush();
 }

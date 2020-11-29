@@ -5,7 +5,8 @@
 #include <bits/stdc++.h>
 
 namespace CleaningTheWindow {
-    void cleaning(std::string color);
+    void cleaningMagenta();
+    void cleaningRed();
 };
 
 

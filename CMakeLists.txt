@@ -3,8 +3,8 @@ project(OpenGL)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(main main.cpp Icosa.h Icosa.cpp CleaningTheWindow.cpp)
+add_executable(main main.cpp Icosa.h Icosa.cpp CleaningTheWindow.cpp DrawRectangle.cpp DrawPolygon.cpp Dotted.cpp Dash.cpp DrawLine.cpp)
 # build for window
-#target_link_libraries(main -lOpenGL32 -lfreeGLUT)
+target_link_libraries(main -lOpenGL32 -lfreeGLUT)
 #build for linux
-target_link_libraries(main -lglut -lGL -lGLU)
+#target_link_libraries(main -lglut -lGL -lGLU)
